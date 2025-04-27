@@ -1804,6 +1804,9 @@ cfg_if! {
     } else if #[cfg(target_os = "haiku")] {
         mod haiku;
         pub use self::haiku::*;
+    } else if #[cfg(target_os = "popcorn")] {
+        mod popcorn;
+        pub use self::popcorn::*;
     } else if #[cfg(target_os = "redox")] {
         mod redox;
         pub use self::redox::*;
