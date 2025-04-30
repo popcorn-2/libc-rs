@@ -338,7 +338,12 @@ s! {
 	}
 }
 
-#[derive(Clone, Copy)]
+#[cfg_attr(
+	feature = "extra_traits",
+	::core::prelude::v1::derive(Debug, Eq, Hash, PartialEq)
+)]
+#[::core::prelude::v1::derive(::core::clone::Clone, ::core::marker::Copy)]
+#[allow(deprecated)]
 #[repr(C)]
 struct sched_param {
 	sched_priority: c_int,
